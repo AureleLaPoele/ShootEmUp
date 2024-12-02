@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B7D7C903-66BA-4727-BC29-9295016E09CE}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B7D7C903-66BA-4727-BC29-9295016E09CE}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\main.cpp",
+              "RelativeDocumentMoniker": "ShootEmUp\\main.cpp",
+              "ToolTip": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\main.cpp",
+              "RelativeToolTip": "ShootEmUp\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-02T10:17:35.685Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
