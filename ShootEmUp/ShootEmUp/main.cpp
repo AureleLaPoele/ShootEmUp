@@ -1,49 +1,72 @@
 #include "include/main.h"
-// j aimelabite
-void InputHandler(Event event, RenderWindow& window, Sprite& sprite);
+
+void HandleInput(Sprite& sprite, float speed);
 
 int main() {
-	// Création window
-	RenderWindow window(VideoMode(WIN_WIDTH, WIN_HEIGHT, 32), "Title");
-	// V-sync
-	window.setVerticalSyncEnabled(true);
+    // Création window
+    RenderWindow window(VideoMode(WIN_WIDTH, WIN_HEIGHT, 32), "Title");
+    // V-sync
+    window.setVerticalSyncEnabled(true);
 
-	Texture texture;
-	if (!texture.loadFromFile("Player_ship_v1.png")) {
-		return -1;
-	}
+    Texture texture;
+    if (!texture.loadFromFile("Player_ship_v1.png")) {
+        return -1;
+    }
 
-	Sprite sprite;
-	sprite.setTexture(texture);
-	sprite.setPosition(500, 200);
+    Sprite sprite;
+    sprite.setTexture(texture);
+    sprite.setPosition(500, 200);
 
-	// Boucle qui tourne tant que window est ouvert
-	while (window.isOpen()) {
-		Event event;
-		while (window.pollEvent(event)) {
-			InputHandler(event, window, sprite);
-		}
-		window.clear();
-		window.draw(sprite);
-		window.display();
-	}
-	return 0;
+    // Define movement speed
+    const float speed = 5.0f;
+
+    // Boucle qui tourne tant que window est ouvert
+    while (window.isOpen()) {
+        Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == Event::Closed) {
+                window.close();
+            }
+            if (event.type == Event::KeyPressed && event.key.code == Keyboard::Escape) {
+                window.close();
+            }
+        }
+
+        // Handle continuous input
+        HandleInput(sprite, speed);
+
+        // Render
+        window.clear();
+        window.draw(sprite);
+        window.display();
+    }
+    return 0;
 }
 
-void InputHandler(Event event, RenderWindow &window, Sprite& sprite) {
-	if (event.type == Event::Closed) {
-		window.close();
-	}
-	if (event.type == Event::KeyPressed) {
-		if (event.key.code == Keyboard::Escape)
-			window.close();
-		if (event.key.code == Keyboard::Down)
-			sprite.move(0, 10);
-		if (event.key.code == Keyboard::Up)
-			sprite.move(0, -10);
-		if (event.key.code == Keyboard::Left)
-			sprite.move(-10, 0);
-		if (event.key.code == Keyboard::Right)
-			sprite.move(10, 0);
-	}
+void HandleInput(Sprite& sprite, float speed) {
+    // Movement vectors
+    float dx = 0.0f;
+    float dy = 0.0f;
+
+    if (Keyboard::isKeyPressed(Keyboard::Up)) {
+        dy -= speed;
+    }
+    if (Keyboard::isKeyPressed(Keyboard::Down)) {
+        dy += speed;
+    }
+    if (Keyboard::isKeyPressed(Keyboard::Left)) {
+        dx -= speed;
+    }
+    if (Keyboard::isKeyPressed(Keyboard::Right)) {
+        dx += speed;
+    }
+
+    // Normalize diagonal movement to maintain consistent speed
+    if (dx != 0 && dy != 0) {
+        dx *= 0.7071f; // 1/sqrt(2)
+        dy *= 0.7071f;
+    }
+
+    // Apply movement
+    sprite.move(dx, dy);
 }
