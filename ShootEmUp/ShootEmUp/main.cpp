@@ -1,5 +1,4 @@
 #include "include/main.h"
-#include "include/player.h"
 
 void InputHandler(Event event, RenderWindow& window);
 
@@ -9,7 +8,6 @@ int main() {
 	// V-sync
 	window.setVerticalSyncEnabled(true);
 
-	Player player;
 	// Boucle qui tourne tant que window est ouvert
 	while (window.isOpen()) {
 		Event event;
