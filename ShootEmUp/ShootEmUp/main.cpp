@@ -1,4 +1,4 @@
-#include "include/main.h"
+#include "include/main.hpp"
 
 void HandleInput(Sprite& sprite, float speed);
 
@@ -9,7 +9,7 @@ int main() {
     window.setVerticalSyncEnabled(true);
 
     Texture texture;
-    if (!texture.loadFromFile("Player_ship_v1.png")) {
+    if (!texture.loadFromFile("assets/sprites/Player_ship_v1.png")) {
         return -1;
     }
 
