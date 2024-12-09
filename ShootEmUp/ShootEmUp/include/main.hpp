@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include "include/ResourceManager.hpp"
+#include "ProjectileManager.hpp"
 using namespace std;
 using namespace sf;
 
