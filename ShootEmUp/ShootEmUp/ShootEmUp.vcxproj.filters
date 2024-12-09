@@ -29,9 +29,6 @@
     <ClInclude Include="include\main.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="ProjectileManager.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>

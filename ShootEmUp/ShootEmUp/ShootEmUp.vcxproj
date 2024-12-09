@@ -143,7 +143,6 @@
   <ItemGroup>
     <ClInclude Include="include\main.hpp" />
     <ClInclude Include="ProjectileManager.hpp" />
-    <ClInclude Include="ResourceManager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

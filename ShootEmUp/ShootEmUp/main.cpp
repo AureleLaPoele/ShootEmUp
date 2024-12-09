@@ -10,13 +10,21 @@ int main() {
     // V-sync
     window.setVerticalSyncEnabled(true);
 
-    // Clock for timing
-    Clock clock;
+    auto& resourceManager = ResourceManager::getInstance();
+    resourceManager.loadTexture("playerShipTexture", "assets/sprites/Player_ship_v1.png");
+    sf::Sprite playerShipTexture(resourceManager.getTexture("playerShipTexture"));
+
+    //resourceManager.loadTexture("playerLaserTexture", "assets/sprites/Player_laser.png");
+    //sf::Sprite playerLaserTexture(resourceManager.getTexture("playerLaserTexture"));
+
+    //resourceManager.loadTexture("playerShipTexture", "assets/sprites/Player_ship_v1.png");
+    //sf::Sprite playerShipTexture(resourceManager.getTexture("playerShipTexture"));
+    // 
 
     // Load textures
     Texture playerLaserTexture;
     Texture enemyLaserTexture;
-    Texture playerShipTexture;
+
     if (!playerLaserTexture.loadFromFile("assets/Player_laser.png")) {
         cerr << "Error loading playerLaser textures" << endl;
         return -1; // Exit if textures cannot be loaded
@@ -25,14 +33,8 @@ int main() {
         cerr << "Error loading enemyLaser textures" << endl;
         return -1; // Exit if textures cannot be loaded
     }
-    if (!playerShipTexture.loadFromFile("assets/sprites/Player_ship_v1.png")) {
-        cerr << "Error loading playerShip textures" << endl;
-        return -1; // Exit if textures cannot be loaded
-    }
 
-    Sprite sprite;
-    sprite.setTexture(playerShipTexture);
-    sprite.setPosition(500, 200);
+    playerShipTexture.setPosition(500, 200);
 
     // Create a ProjectileManager instance
     ProjectileManager projectileManager(800.0f, 600.0f, playerLaserTexture, enemyLaserTexture);
@@ -48,6 +50,9 @@ int main() {
         {Keyboard::D, false},
         {Keyboard::Space, false}
     };
+
+    // cooldown for timing
+    Clock cooldown;
 
     // Game Loop
     while (window.isOpen()) {
@@ -67,11 +72,11 @@ int main() {
         }
 
         // Handle continuous input for movement and shooting
-        HandleMovementInput(sprite, keyStates, speed);
+        HandleMovementInput(playerShipTexture, keyStates, speed);
         HandleShootingInput(projectileManager, keyStates);
 
         // Calculate deltaTime
-        float deltaTime = clock.restart().asSeconds();
+        float deltaTime = cooldown.restart().asSeconds();
 
         // Update the projectile manager
         projectileManager.update(deltaTime);
@@ -79,7 +84,7 @@ int main() {
         // Render
         window.clear();
         projectileManager.render(window);
-        window.draw(sprite);
+        window.draw(playerShipTexture);
         window.display();
     }
     return 0;
