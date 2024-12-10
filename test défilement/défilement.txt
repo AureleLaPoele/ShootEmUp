@@ -1,0 +1,51 @@
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+using namespace sf;
+
+int main() {
+	RenderWindow win(VideoMode(600, 900), "Test défilement");
+
+	Texture backgroundTexture;
+	if (!backgroundTexture.loadFromFile("backgrounda.png")) {
+		return -1;
+	}
+	backgroundTexture.setRepeated(true);
+
+	Sprite background1(backgroundTexture);
+	Sprite background2(backgroundTexture);
+
+	background1.setPosition(0, 0);
+	background2.setPosition(0, backgroundTexture.getSize().y);
+
+	float scrollSpeed = 200.0f;
+
+	Clock clock;
+	while (win.isOpen()) {
+		Event event;
+		while (win.pollEvent(event)) {
+			if (event.type == Event::Closed)
+				win.close();
+		}
+		
+		float deltaTime = clock.restart().asSeconds();
+		float offset = scrollSpeed * deltaTime;
+
+		background1.move(0, -offset);
+		background2.move(0, -offset);
+
+		if (background1.getPosition().y + backgroundTexture.getSize().y <= 0) {
+			background1.setPosition(0, background2.getPosition().y + backgroundTexture.getSize().y);
+		}
+		if (background2.getPosition().y + backgroundTexture.getSize().y <= 0) {
+			background2.setPosition(0, background1.getPosition().y + backgroundTexture.getSize().y);
+		}
+
+
+		win.clear();
+		win.draw(background1);
+		win.draw(background2);
+		win.display();
+	}
+	return 0;
+}
