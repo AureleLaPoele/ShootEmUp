@@ -137,12 +137,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="ProjectileManager.cpp" />
-    <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="src\ProjectileManager.cpp" />
+    <ClCompile Include="src\ResourceManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\main.hpp" />
-    <ClInclude Include="ProjectileManager.hpp" />
+    <ClInclude Include="include\ProjectileManager.hpp" />
+    <ClInclude Include="include\ResourceManager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
