@@ -31,21 +31,19 @@ void ProjectileManager::render(RenderWindow& window) {
     }
 }
 
-void ProjectileManager::handlePlayerInput(const sf::Keyboard::Key& key) {
+void ProjectileManager::handlePlayerInput(const sf::Keyboard::Key& key, const sf::Vector2f& playerPosition) {
     // Check if the spacebar is pressed and if the cooldown has elapsed
     if (key == sf::Keyboard::Space && sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
         if (timeSinceLastShot >= shotCooldown) {
             playerProjectiles.emplace_back(
-                sf::Vector2f(screenWidth / 1.5, screenHeight - 50), // Initial position
-                sf::Vector2f(0, -300),                            // Upward velocity
-                playerProjectileTexture                           // Texture
+                sf::Vector2f(playerPosition.x + 10, playerPosition.y - 10), // Adjust spawn position relative to player
+                sf::Vector2f(0, -350),                                     // Upward velocity
+                playerProjectileTexture                                    // Texture
             );
-
             timeSinceLastShot = 0.0f; // Reset cooldown timer
         }
     }
 }
-
 
 void ProjectileManager::spawnEnemyProjectile(const Vector2f& position, const Vector2f& velocity) {
     enemyProjectiles.emplace_back(position, velocity, enemyProjectileTexture);
