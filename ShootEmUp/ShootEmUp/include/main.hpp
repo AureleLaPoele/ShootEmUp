@@ -3,6 +3,7 @@
 #include <SFML/Audio.hpp>
 #include "include/ResourceManager.hpp"
 #include "ProjectileManager.hpp"
+#include "EnemyManager.hpp"
 using namespace std;
 using namespace sf;
 
