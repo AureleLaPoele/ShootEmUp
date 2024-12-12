@@ -1,10 +1,7 @@
 ﻿  main.cpp
-  ProjectileManager.cpp
-  ResourceManager.cpp
-C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\ShootEmUp\src\ResourceManager.cpp(12,11): warning C4305: 'return' : troncation de 'int' à 'bool'
   Génération de code en cours
-  517 of 522 functions (99.0%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+  1 of 522 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   ShootEmUp.vcxproj -> C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\x64\Release\ShootEmUp.exe
