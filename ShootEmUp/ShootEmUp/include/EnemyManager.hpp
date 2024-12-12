@@ -11,7 +11,7 @@ public:
 
     void update(float deltaTime);
     void render(sf::RenderWindow& window);
-    void spawnEnemy();
+    //void spawnEnemy();
     void removeOffScreenEnemies();
     void handleEnemyShooting(float deltaTime);
 

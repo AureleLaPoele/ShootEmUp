@@ -1,9 +1,12 @@
 #include <iostream>
+#include <vector>
+#include <string>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include "include/ResourceManager.hpp"
 #include "ProjectileManager.hpp"
 #include "EnemyManager.hpp"
+#include "ScrollManager.hpp"
 using namespace std;
 using namespace sf;
 

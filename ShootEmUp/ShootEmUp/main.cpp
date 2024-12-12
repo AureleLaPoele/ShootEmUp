@@ -1,4 +1,4 @@
-#include "include/main.hpp"
+﻿#include "include/main.hpp"
 #include <unordered_map>
 #include <iostream>
 
@@ -11,9 +11,20 @@ int main() {
     sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT, 32), "Shoot Them Up");
     window.setVerticalSyncEnabled(true);
 
+    //Ressource manager et appel des textures
     auto& resourceManager = ResourceManager::getInstance();
     if (!resourceManager.loadTexture("playerShipTexture", "assets/sprites/Player_ship_v1.png")) {
         std::cerr << "Failed to load player ship texture." << std::endl;
+        return -1;
+    }
+
+    if (!resourceManager.loadTexture("foregroundTexture", "assets/foreground.png")) {
+        std::cerr << "Failed to load foreground texture." << std::endl;
+        return -1;
+    }
+
+    if (!resourceManager.loadTexture("playerLaser", "assets/Player_laser.png") || !resourceManager.loadTexture("enemyLaser", "assets/Enemy_laser.png")) {
+        std::cerr << "Failed to load laser textures." << std::endl;
         return -1;
     }
 
@@ -21,12 +32,21 @@ int main() {
     playerShip.setTexture(resourceManager.getTexture("playerShipTexture"));
     playerShip.setPosition(250, 700);
 
-    // Load laser textures
-    if (!resourceManager.loadTexture("playerLaser", "assets/Player_laser.png") ||
-        !resourceManager.loadTexture("enemyLaser", "assets/Enemy_laser.png")) {
-        std::cerr << "Failed to load laser textures." << std::endl;
-        return -1;
-    }
+    sf::Texture texture;
+    texture = resourceManager.getTexture("foregroundTexture");
+    sf::Sprite foregroundTexture;
+    foregroundTexture.setTexture(resourceManager.getTexture("foregroundTexture"));
+    sf::Sprite foreground1(foregroundTexture);
+    sf::Sprite foreground2(foregroundTexture);
+    float foregroundScaleFactor = 0.8f;
+    float scaleXfore = static_cast<float>(window.getSize().x) / texture.getSize().x * foregroundScaleFactor;
+    float scaleYfore = scaleXfore; // Garder le ratio d'aspect pour �viter l'�tirement
+
+    foreground1.setScale(scaleXfore, scaleYfore);
+    foreground2.setScale(scaleXfore, scaleYfore);
+
+    foreground1.setPosition(0, 0);
+    foreground2.setPosition(0, texture.getSize().y * scaleYfore);
 
     // Create a ProjectileManager instance
     ProjectileManager projectileManager(static_cast<float>(window.getSize().x),
@@ -46,8 +66,13 @@ int main() {
         {sf::Keyboard::Space, false}
     };
 
-    // Game Loop
+   
     sf::Clock cooldown;
+    sf::Clock scrollClock;
+    float scrollSpeed = 250.0f;
+    float scrollSpeedforeground = 100.0f;
+
+    // Game Loop
     while (window.isOpen()) {
         // Poll events
         sf::Event event;
@@ -67,14 +92,26 @@ int main() {
         HandleMovementInput(playerShip, keyStates, speed, window);
         HandleShootingInput(projectileManager, playerShip, keyStates);
 
-        // Calculate deltaTime
+        // Calculate deltaTime and update the projectile manager
         float deltaTime = cooldown.restart().asSeconds();
-
-        // Update the projectile manager
         projectileManager.update(deltaTime);
+
+        float deltaTimeForeground = scrollClock.restart().asSeconds();
+        float offsetforeground = scrollSpeedforeground * deltaTimeForeground;
+        foreground1.move(0, offsetforeground);
+        foreground2.move(0, offsetforeground);
+
+        if (foreground1.getPosition().y >= window.getSize().y) {
+            foreground1.setPosition(0, foreground2.getPosition().y - foreground1.getGlobalBounds().height);
+        }
+        if (foreground2.getPosition().y >= window.getSize().y) {
+            foreground2.setPosition(0, foreground1.getPosition().y - foreground2.getGlobalBounds().height);
+        }
 
         // Render
         window.clear();
+        window.draw(foreground1);
+        window.draw(foreground2);
         projectileManager.render(window);
         window.draw(playerShip);
         window.display();
