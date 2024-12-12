@@ -1,7 +1,9 @@
 ﻿  main.cpp
+  ProjectileManager.cpp
+  ResourceManager.cpp
   Génération de code en cours
-  1 of 522 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  31 of 500 functions ( 6.2%) were compiled, the rest were copied from previous compilation.
+    9 functions were new in current compilation
+    33 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
-  ShootEmUp.vcxproj -> C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\x64\Release\ShootEmUp.exe
+  ShootEmUp.vcxproj -> C:\Users\tmillet\Documents\GitHub\ShootEmUp\ShootEmUp\x64\Release\ShootEmUp.exe

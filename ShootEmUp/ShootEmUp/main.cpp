@@ -1,5 +1,6 @@
 #include "include/main.hpp"
 #include <unordered_map>
+#include <iostream>
 
 // Function declarations
 void HandleShootingInput(ProjectileManager& projectileManager, const sf::Sprite& playerShip, const std::unordered_map<sf::Keyboard::Key, bool>& keyStates);
@@ -7,33 +8,31 @@ void HandleMovementInput(sf::Sprite& sprite, const std::unordered_map<sf::Keyboa
 
 int main() {
     // Window creation
-    RenderWindow window(VideoMode(WIN_WIDTH, WIN_HEIGHT, 32), "Title");
+    sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT, 32), "Shoot Them Up");
     window.setVerticalSyncEnabled(true);
 
     auto& resourceManager = ResourceManager::getInstance();
-    resourceManager.loadTexture("playerShipTexture", "assets/sprites/Player_ship_v1.png");
-    sf::Sprite playerShipTexture;
-    playerShipTexture.setTexture(resourceManager.getTexture("playerShipTexture"));
-    playerShipTexture.setPosition(500, 200);
-
-    // Load laser textures
-    Texture playerLaserTexture;
-    Texture enemyLaserTexture;
-
-    if (!playerLaserTexture.loadFromFile("assets/Player_laser.png")) {
-        cerr << "Error loading Player_laser.png" << endl;
+    if (!resourceManager.loadTexture("playerShipTexture", "assets/sprites/Player_ship_v1.png")) {
+        std::cerr << "Failed to load player ship texture." << std::endl;
         return -1;
     }
-    if (!enemyLaserTexture.loadFromFile("assets/Enemy_laser.png")) {
-        cerr << "Error loading Enemy_laser.png" << endl;
+
+    sf::Sprite playerShip;
+    playerShip.setTexture(resourceManager.getTexture("playerShipTexture"));
+    playerShip.setPosition(250, 700);
+
+    // Load laser textures
+    if (!resourceManager.loadTexture("playerLaser", "assets/Player_laser.png") ||
+        !resourceManager.loadTexture("enemyLaser", "assets/Enemy_laser.png")) {
+        std::cerr << "Failed to load laser textures." << std::endl;
         return -1;
     }
 
     // Create a ProjectileManager instance
     ProjectileManager projectileManager(static_cast<float>(window.getSize().x),
         static_cast<float>(window.getSize().y),
-        playerLaserTexture,
-        enemyLaserTexture);
+        resourceManager.getTexture("playerLaser"),
+        resourceManager.getTexture("enemyLaser"));
 
     // Define movement speed
     const float speed = 5.0f;
@@ -47,10 +46,8 @@ int main() {
         {sf::Keyboard::Space, false}
     };
 
-    // cooldown for timing
-    sf::Clock cooldown;
-
     // Game Loop
+    sf::Clock cooldown;
     while (window.isOpen()) {
         // Poll events
         sf::Event event;
@@ -67,8 +64,8 @@ int main() {
         }
 
         // Handle continuous input for movement and shooting
-        HandleMovementInput(playerShipTexture, keyStates, speed, window);
-        HandleShootingInput(projectileManager, playerShipTexture, keyStates);
+        HandleMovementInput(playerShip, keyStates, speed, window);
+        HandleShootingInput(projectileManager, playerShip, keyStates);
 
         // Calculate deltaTime
         float deltaTime = cooldown.restart().asSeconds();
@@ -79,7 +76,7 @@ int main() {
         // Render
         window.clear();
         projectileManager.render(window);
-        window.draw(playerShipTexture);
+        window.draw(playerShip);
         window.display();
     }
 
@@ -90,10 +87,10 @@ void HandleMovementInput(sf::Sprite& sprite, const std::unordered_map<sf::Keyboa
     float dx = 0.0f, dy = 0.0f;
 
     // Check key states for movement
-    if (keyStates.find(sf::Keyboard::Z) != keyStates.end() && keyStates.at(sf::Keyboard::Z)) dy -= speed;
-    if (keyStates.find(sf::Keyboard::S) != keyStates.end() && keyStates.at(sf::Keyboard::S)) dy += speed;
-    if (keyStates.find(sf::Keyboard::Q) != keyStates.end() && keyStates.at(sf::Keyboard::Q)) dx -= speed;
-    if (keyStates.find(sf::Keyboard::D) != keyStates.end() && keyStates.at(sf::Keyboard::D)) dx += speed;
+    if (keyStates.at(sf::Keyboard::Z)) dy -= speed;
+    if (keyStates.at(sf::Keyboard::S)) dy += speed;
+    if (keyStates.at(sf::Keyboard::Q)) dx -= speed;
+    if (keyStates.at(sf::Keyboard::D)) dx += speed;
 
     // Normalize diagonal movement to maintain consistent speed
     if (dx != 0 && dy != 0) {
@@ -111,7 +108,7 @@ void HandleMovementInput(sf::Sprite& sprite, const std::unordered_map<sf::Keyboa
 }
 
 void HandleShootingInput(ProjectileManager& projectileManager, const sf::Sprite& playerShip, const std::unordered_map<sf::Keyboard::Key, bool>& keyStates) {
-    if (keyStates.find(sf::Keyboard::Space) != keyStates.end() && keyStates.at(sf::Keyboard::Space)) {
+    if (keyStates.at(sf::Keyboard::Space)) {
         projectileManager.handlePlayerInput(sf::Keyboard::Space, playerShip.getPosition());
     }
 }
