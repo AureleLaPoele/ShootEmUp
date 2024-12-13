@@ -158,7 +158,6 @@ int main() {
         sf::Event event;
         while (window.pollEvent(event)) {
             window.clear();
-            window.display();
             bool onPlay = false;
             if (event.type == sf::Event::Closed) {
                 window.close();
