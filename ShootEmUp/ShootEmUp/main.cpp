@@ -12,6 +12,12 @@ int main() {
     window.setVerticalSyncEnabled(true);
 
     //Ressource manager et appel des textures
+
+    sf::Font font;
+    if (!font.loadFromFile("assets/RETROTECH.ttf")) {
+        return -1;
+    }
+
     auto& resourceManager = ResourceManager::getInstance();
     if (!resourceManager.loadTexture("playerShipTexture", "assets/sprites/Player_ship_v1.png")) {
         std::cerr << "Failed to load player ship texture." << std::endl;
@@ -120,69 +126,126 @@ int main() {
     float scrollSpeed = 250.0f;
     float scrollSpeedforeground = 100.0f;
 
+    sf::Text play;
+    play.setFont(font);
+    play.setString("Play");
+    play.setCharacterSize(50);
+    play.setFillColor(sf::Color::Red);
+    play.setPosition(250, 350);
+    sf::FloatRect playTextBounds = play.getGlobalBounds();
+    int espacement = 25;
+    sf::RectangleShape playHitbox(sf::Vector2f(playTextBounds.width + espacement, playTextBounds.height + espacement));
+    playHitbox.setPosition(playTextBounds.left - 12.5f, playTextBounds.top - 12.5f);
+    playHitbox.setFillColor(sf::Color::Transparent);
+    playHitbox.setOutlineColor(sf::Color::Red);
+    playHitbox.setOutlineThickness(1);
+
+    sf::Text exit;
+    exit.setFont(font);
+    exit.setString("Exit");
+    exit.setCharacterSize(50);
+    exit.setFillColor(sf::Color::Red);
+    exit.setPosition(250, 550);
+    sf::FloatRect exitTextBounds = exit.getGlobalBounds();
+    sf::RectangleShape exitHitbox(sf::Vector2f(exitTextBounds.width + espacement, exitTextBounds.height + espacement));
+    exitHitbox.setPosition(exitTextBounds.left - 12.5f, exitTextBounds.top - 12.5f);
+    exitHitbox.setFillColor(sf::Color::Transparent);
+    exitHitbox.setOutlineColor(sf::Color::Red);
+    exitHitbox.setOutlineThickness(1);
+
     // Game Loop
     while (window.isOpen()) {
-        // Poll events
         sf::Event event;
         while (window.pollEvent(event)) {
+            window.clear();
+            bool onPlay = false;
             if (event.type == sf::Event::Closed) {
                 window.close();
             }
-            if (event.type == sf::Event::KeyPressed) {
-                keyStates[event.key.code] = true;
+
+            if (sf::Mouse::getPosition(window).x > playHitbox.getPosition().x && sf::Mouse::getPosition(window).x < playHitbox.getPosition().x + playTextBounds.width + espacement && sf::Mouse::getPosition(window).y > playHitbox.getPosition().y && sf::Mouse::getPosition(window).y < playHitbox.getPosition().y + playTextBounds.height + espacement) {
+                window.draw(playHitbox);
+                onPlay = true;
             }
-            if (event.type == sf::Event::KeyReleased) {
-                keyStates[event.key.code] = false;
+
+            else if (sf::Mouse::getPosition(window).x > exitHitbox.getPosition().x && sf::Mouse::getPosition(window).x < exitHitbox.getPosition().x + exitTextBounds.width + espacement && sf::Mouse::getPosition(window).y > exitHitbox.getPosition().y && sf::Mouse::getPosition(window).y < exitHitbox.getPosition().y + exitTextBounds.height + espacement) {
+                window.draw(exitHitbox);
+                if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+                    window.close();
+                }
+            }
+
+            else {
+                onPlay = false;
+            }
+            window.draw(exit);
+            window.draw(play);
+            window.display();
+            if (onPlay == true && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+                bool game = true;
+                while (game) {
+                    sf::Event event;
+                    while (window.pollEvent(event)) {
+                        if (event.type == sf::Event::Closed) {
+                            window.close();
+                        }
+                        if (event.type == sf::Event::KeyPressed) {
+                            keyStates[event.key.code] = true;
+                        }
+                        if (event.type == sf::Event::KeyReleased) {
+                            keyStates[event.key.code] = false;
+                        }
+                    }
+
+                    // Animation
+                    if (frameClock.getElapsedTime().asSeconds() > frameDuration) {
+                        frameClock.restart();
+                        currentFrame = (currentFrame + 1) % frames.size(); // Passer � la frame suivante
+                        background1.setTexture(frames[currentFrame]);
+                        background2.setTexture(frames[currentFrame]);
+                    }
+
+                    // Handle continuous input for movement and shooting
+                    HandleMovementInput(playerShip, keyStates, speed, window);
+                    HandleShootingInput(projectileManager, playerShip, keyStates);
+
+                    // Calculate deltaTime and update the projectile manager
+                    float deltaTime = cooldown.restart().asSeconds();
+                    projectileManager.update(deltaTime);
+
+                    float offset = scrollSpeed * deltaTime;
+                    float offsetforeground = scrollSpeedforeground * deltaTime;
+                    background1.move(0, offset);
+                    background2.move(0, offset);
+                    foreground1.move(0, offsetforeground);
+                    foreground2.move(0, offsetforeground);
+
+                    if (background1.getPosition().y >= window.getSize().y) {
+                        background1.setPosition(0, background2.getPosition().y - background1.getGlobalBounds().height);
+                    }
+                    if (background2.getPosition().y >= window.getSize().y) {
+                        background2.setPosition(0, background1.getPosition().y - background2.getGlobalBounds().height);
+                    }
+                    if (foreground1.getPosition().y >= window.getSize().y) {
+                        foreground1.setPosition(0, foreground2.getPosition().y - foreground1.getGlobalBounds().height);
+                    }
+                    if (foreground2.getPosition().y >= window.getSize().y) {
+                        foreground2.setPosition(0, foreground1.getPosition().y - foreground2.getGlobalBounds().height);
+                    }
+
+                    // Render
+                    window.clear();
+                    window.draw(background1);
+                    window.draw(background2);
+                    window.draw(foreground1);
+                    window.draw(foreground2);
+                    projectileManager.render(window);
+                    window.draw(playerShip);
+                    window.display();
+                }
             }
         }
-
-        // Animation
-        if (frameClock.getElapsedTime().asSeconds() > frameDuration) {
-            frameClock.restart();
-            currentFrame = (currentFrame + 1) % frames.size(); // Passer � la frame suivante
-            background1.setTexture(frames[currentFrame]);
-            background2.setTexture(frames[currentFrame]);
-        }
-
-        // Handle continuous input for movement and shooting
-        HandleMovementInput(playerShip, keyStates, speed, window);
-        HandleShootingInput(projectileManager, playerShip, keyStates);
-
-        // Calculate deltaTime and update the projectile manager
-        float deltaTime = cooldown.restart().asSeconds();
-        projectileManager.update(deltaTime);
-
-        float offset = scrollSpeed * deltaTime;
-        float offsetforeground = scrollSpeedforeground * deltaTime;
-        background1.move(0, offset);
-        background2.move(0, offset);
-        foreground1.move(0, offsetforeground);
-        foreground2.move(0, offsetforeground);
-
-        if (background1.getPosition().y >= window.getSize().y) {
-            background1.setPosition(0, background2.getPosition().y - background1.getGlobalBounds().height);
-        }
-        if (background2.getPosition().y >= window.getSize().y) {
-            background2.setPosition(0, background1.getPosition().y - background2.getGlobalBounds().height);
-        }
-        if (foreground1.getPosition().y >= window.getSize().y) {
-            foreground1.setPosition(0, foreground2.getPosition().y - foreground1.getGlobalBounds().height);
-        }
-        if (foreground2.getPosition().y >= window.getSize().y) {
-            foreground2.setPosition(0, foreground1.getPosition().y - foreground2.getGlobalBounds().height);
-        }
-
-        // Render
-        window.clear();
-        window.draw(background1);
-        window.draw(background2);
-        window.draw(foreground1);
-        window.draw(foreground2);
-        projectileManager.render(window);
-        window.draw(playerShip);
-        window.display();
     }
-
     return 0;
 }
 
