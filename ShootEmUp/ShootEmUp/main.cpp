@@ -18,6 +18,21 @@ int main() {
         return -1;
     }
 
+    if (!resourceManager.loadTexture("enemyBasicTexture", "assets/sprites/enemy_basic_v1.png")) {
+        std::cerr << "Failed to load basic texture texture." << std::endl;
+        return -1;
+    }
+
+    if (!resourceManager.loadTexture("enemyAdvancedTexture", "assets/sprites/enemy_Advanced_v1.png")) {
+        std::cerr << "Failed to load enemy advanced texture." << std::endl;
+        return -1;
+    }
+
+    if (!resourceManager.loadTexture("enemyEliteTexture", "assets/sprites/enemy_Elite_v1.png")) {
+        std::cerr << "Failed to load player ship texture." << std::endl;
+        return -1;
+    }
+
     if (!resourceManager.loadTexture("foregroundTexture", "assets/foreground.png")) {
         std::cerr << "Failed to load foreground texture." << std::endl;
         return -1;
@@ -45,6 +60,15 @@ int main() {
     sf::Sprite playerShip;
     playerShip.setTexture(resourceManager.getTexture("playerShipTexture"));
     playerShip.setPosition(250, 700);
+
+    sf::Sprite enemyBasic;
+    enemyBasic.setTexture(resourceManager.getTexture("enemyBasicTexture"));
+
+    sf::Sprite enemyAdvanced;
+    enemyAdvanced.setTexture(resourceManager.getTexture("enemyAdvancedTexture"));
+
+    sf::Sprite enemyElite;
+    enemyElite.setTexture(resourceManager.getTexture("enemyEliteTexture"));
 
     sf::Texture texture;
     texture = resourceManager.getTexture("foregroundTexture");
