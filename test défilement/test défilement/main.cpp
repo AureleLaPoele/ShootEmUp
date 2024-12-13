@@ -3,8 +3,8 @@
 #include <string>
 
 int main() {
-    // Créer une fenêtre
-    sf::RenderWindow window(sf::VideoMode(600, 800), "Background Animé et Défilant avec SFML");
+    // Crï¿½er une fenï¿½tre
+    sf::RenderWindow window(sf::VideoMode(600, 800), "Background Animï¿½ et Dï¿½filant avec SFML");
 
     // Charger les frames du GIF
     std::vector<sf::Texture> frames;
@@ -23,38 +23,38 @@ int main() {
         return -1;
     }
 
-    // Créer deux sprites pour le défilement
+    // Crï¿½er deux sprites pour le dï¿½filement
     sf::Sprite background1(frames[0]);
     sf::Sprite background2(frames[0]);
     sf::Sprite foreground1(texture);
     sf::Sprite foreground2(texture);
 
-    float foregroundScaleFactor = 0.8f; // Réduire à 50% de la taille originale
+    float foregroundScaleFactor = 0.8f; // Rï¿½duire ï¿½ 50% de la taille originale
 
-    // Mise à l'échelle pour agrandir les sprites
+    // Mise ï¿½ l'ï¿½chelle pour agrandir les sprites
     float scaleX = static_cast<float>(window.getSize().x) / frames[0].getSize().x;
     float scaleY = static_cast<float>(window.getSize().y) / frames[0].getSize().y;
 
     float scaleXfore = static_cast<float>(window.getSize().x) / texture.getSize().x * foregroundScaleFactor;
-    float scaleYfore = scaleXfore; // Garder le ratio d'aspect pour éviter l'étirement
+    float scaleYfore = scaleXfore; // Garder le ratio d'aspect pour ï¿½viter l'ï¿½tirement
 
     background1.setScale(scaleX, scaleY);
     background2.setScale(scaleX, scaleY);
     foreground1.setScale(scaleXfore, scaleYfore);
     foreground2.setScale(scaleXfore, scaleYfore);
 
-    // Positionner les deux sprites initialement pour un défilement vertical
+    // Positionner les deux sprites initialement pour un dï¿½filement vertical
     background1.setPosition(0, 0);
     background2.setPosition(0, frames[0].getSize().y * scaleY);
-    foreground1.setPosition(0, 0);
-    foreground2.setPosition(0, texture.getSize().y * scaleYfore);
+    foreground1.setPosition(100, 0);
+    foreground2.setPosition(10, texture.getSize().y * scaleYfore);
 
     // Variables pour l'animation
     sf::Clock frameClock;       // Pour le changement de frame
-    sf::Clock scrollClock;      // Pour le défilement
-    int currentFrame = 0;       // Frame actuellement affichée
-    float frameDuration = 0.1f; // Durée d'une frame en secondes (par exemple, 0.1s = 10 fps)
-    float scrollSpeed = 250.0f; // Vitesse de défilement (pixels par seconde)
+    sf::Clock scrollClock;      // Pour le dï¿½filement
+    int currentFrame = 0;       // Frame actuellement affichï¿½e
+    float frameDuration = 0.1f; // Durï¿½e d'une frame en secondes (par exemple, 0.1s = 10 fps)
+    float scrollSpeed = 250.0f; // Vitesse de dï¿½filement (pixels par seconde)
     float scrollSpeedfore = 100.0f;
 
     // Boucle principale
@@ -65,15 +65,15 @@ int main() {
                 window.close();
         }
 
-        // Mettre à jour l'animation des frames
+        // Mettre ï¿½ jour l'animation des frames
         if (frameClock.getElapsedTime().asSeconds() > frameDuration) {
             frameClock.restart();
-            currentFrame = (currentFrame + 1) % frames.size(); // Passer à la frame suivante
+            currentFrame = (currentFrame + 1) % frames.size(); // Passer ï¿½ la frame suivante
             background1.setTexture(frames[currentFrame]);
             background2.setTexture(frames[currentFrame]);
         }
 
-        // Défilement vertical
+        // Dï¿½filement vertical
         float deltaTime = scrollClock.restart().asSeconds();
         float offset = scrollSpeed * deltaTime;
         float offsetfore = scrollSpeedfore * deltaTime;
@@ -83,7 +83,7 @@ int main() {
         foreground1.move(0, offsetfore);
         foreground2.move(0, offsetfore);
 
-        // Réinitialiser la position des sprites pour le défilement continu
+        // Rï¿½initialiser la position des sprites pour le dï¿½filement continu
         if (background1.getPosition().y >= window.getSize().y) {
             background1.setPosition(0, background2.getPosition().y - background1.getGlobalBounds().height);
         }
@@ -98,7 +98,7 @@ int main() {
             foreground2.setPosition(0, foreground1.getPosition().y - foreground2.getGlobalBounds().height);
         }
 
-        // Dessiner la scène
+        // Dessiner la scï¿½ne
         window.clear();
         window.draw(background1);
         window.draw(background2);
