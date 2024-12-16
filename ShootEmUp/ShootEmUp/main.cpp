@@ -175,6 +175,7 @@ int main() {
     exitHitbox.setOutlineColor(sf::Color::Red);
     exitHitbox.setOutlineThickness(1);
 
+    std::cout << "Voici les inputs :\nZ pour aller vers le haut\nS pour aller vers le bas\nQ pour aller vers la gauche\nD pour aller vers la droite\nEspace pour tirer des missiles\nEchap pour quitter la partie";
     // Game Loop
     while (window.isOpen()) {
         sf::Event event;
@@ -208,7 +209,6 @@ int main() {
             window.draw(name1);
             window.display();
             if (onPlay == true && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-                std::cout << "Voici les inputs :\nZ pour aller vers le haut\nS pour aller vers le bas\nQ pour aller vers la gauche\nD pour aller vers la droite\nEspace pour tirer des missiles\nEchap pour quitter la partie";
                 bool game = true;
                 while (game) {
                     sf::Event event;
