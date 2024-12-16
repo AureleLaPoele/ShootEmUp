@@ -49,6 +49,11 @@ int main() {
         return -1;
     }
 
+    if (!resourceManager.loadTexture("space", "assets/space.jpg")) {
+        std::cerr << "Failed to load space texture." << std::endl;
+        return -1;
+    }
+
     std::vector<sf::Texture> frames;
     int frameCount = 14;
     for (int i = 0; i < frameCount; ++i) {
@@ -75,6 +80,10 @@ int main() {
 
     sf::Sprite enemyElite;
     enemyElite.setTexture(resourceManager.getTexture("enemyEliteTexture"));
+
+    sf::Sprite space;
+    space.setTexture(resourceManager.getTexture("space"));
+    space.setScale(2, 2);
 
     sf::Texture texture;
     texture = resourceManager.getTexture("foregroundTexture");
@@ -116,7 +125,6 @@ int main() {
         {sf::Keyboard::D, false},
         {sf::Keyboard::Space, false}
     };
-
    
     sf::Clock cooldown;
     sf::Clock frameClock;
@@ -125,6 +133,20 @@ int main() {
     float frameDuration = 0.1f;
     float scrollSpeed = 250.0f;
     float scrollSpeedforeground = 100.0f;
+
+    sf::Text name;
+    name.setFont(font);
+    name.setString("Intergalactic");
+    name.setCharacterSize(75);
+    //name.setFillColor(sf::Color::Blue);
+    name.setPosition(50, 50);
+
+    sf::Text name1;
+    name1.setFont(font);
+    name1.setString("Conflict");
+    name1.setCharacterSize(75);
+    //name1.setFillColor(sf::Color::Red);
+    name1.setPosition(150, 150);
 
     sf::Text play;
     play.setFont(font);
@@ -158,6 +180,7 @@ int main() {
         sf::Event event;
         while (window.pollEvent(event)) {
             window.clear();
+            window.draw(space);
             bool onPlay = false;
             if (event.type == sf::Event::Closed) {
                 window.close();
@@ -178,16 +201,23 @@ int main() {
             else {
                 onPlay = false;
             }
+
             window.draw(exit);
             window.draw(play);
+            window.draw(name);
+            window.draw(name1);
             window.display();
             if (onPlay == true && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+                std::cout << "Voici les inputs :\nZ pour aller vers le haut\nS pour aller vers le bas\nQ pour aller vers la gauche\nD pour aller vers la droite\nEspace pour tirer des missiles\nEchap pour quitter la partie";
                 bool game = true;
                 while (game) {
                     sf::Event event;
                     while (window.pollEvent(event)) {
                         if (event.type == sf::Event::Closed) {
                             window.close();
+                        }
+                        if (event.key.code == Keyboard::Escape) {
+                            game = false;
                         }
                         if (event.type == sf::Event::KeyPressed) {
                             keyStates[event.key.code] = true;
@@ -242,6 +272,7 @@ int main() {
                     projectileManager.render(window);
                     window.draw(playerShip);
                     window.display();
+                    
                 }
             }
         }
