@@ -6,7 +6,6 @@
 #include "include/ResourceManager.hpp"
 #include "ProjectileManager.hpp"
 #include "EnemyManager.hpp"
-#include "ScrollManager.hpp"
 using namespace std;
 using namespace sf;
 

@@ -179,6 +179,7 @@ int main() {
     // Game Loop
     while (window.isOpen()) {
         sf::Event event;
+        window.display();
         while (window.pollEvent(event)) {
             window.clear();
             window.draw(space);
@@ -202,7 +203,6 @@ int main() {
             else {
                 onPlay = false;
             }
-
             window.draw(exit);
             window.draw(play);
             window.draw(name);

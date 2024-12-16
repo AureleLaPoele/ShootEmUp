@@ -140,14 +140,12 @@
     <ClCompile Include="src\EnemyManager.cpp" />
     <ClCompile Include="src\ProjectileManager.cpp" />
     <ClCompile Include="src\ResourceManager.cpp" />
-    <ClCompile Include="src\ScrollManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\EnemyManager.hpp" />
     <ClInclude Include="include\main.hpp" />
     <ClInclude Include="include\ProjectileManager.hpp" />
     <ClInclude Include="include\ResourceManager.hpp" />
-    <ClInclude Include="include\ScrollManager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
