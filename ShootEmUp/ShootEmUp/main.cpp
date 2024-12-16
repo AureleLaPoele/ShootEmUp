@@ -10,6 +10,7 @@ int main() {
 
     std::cout << "test\n";
     std::cout << "test1\n";
+    std::cout << "test2\n";
     // Window creation
     sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT, 32), "Shoot Them Up");
     window.setVerticalSyncEnabled(true);
