@@ -7,6 +7,8 @@ void HandleShootingInput(ProjectileManager& projectileManager, const sf::Sprite&
 void HandleMovementInput(sf::Sprite& sprite, const std::unordered_map<sf::Keyboard::Key, bool>& keyStates, float speed, const sf::RenderWindow& window);
 
 int main() {
+
+    std::cout << "test";
     // Window creation
     sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT, 32), "Shoot Them Up");
     window.setVerticalSyncEnabled(true);
