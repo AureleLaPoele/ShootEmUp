@@ -8,7 +8,8 @@ void HandleMovementInput(sf::Sprite& sprite, const std::unordered_map<sf::Keyboa
 
 int main() {
 
-    std::cout << "test";
+    std::cout << "test\n";
+    std::cout << "test1\n";
     // Window creation
     sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT, 32), "Shoot Them Up");
     window.setVerticalSyncEnabled(true);
