@@ -137,6 +137,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="src\EnemyManager.cpp" />
     <ClCompile Include="src\ProjectileManager.cpp" />
     <ClCompile Include="src\ResourceManager.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="include\main.hpp" />
     <ClInclude Include="include\ProjectileManager.hpp" />
     <ClInclude Include="include\ResourceManager.hpp" />
+    <ClInclude Include="Player.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
