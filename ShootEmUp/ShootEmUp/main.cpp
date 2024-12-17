@@ -122,6 +122,10 @@ int main() {
         resourceManager.getTexture("playerLaser"),
         resourceManager.getTexture("enemyLaser"));
 
+    Enemy Basic("enemyBasicTexture", 1, 1, 1.0, 1);
+    Enemy Advanced("enemyAdvancedTexture", 2, 1, 0.8, 2);
+    Enemy Elite("enemyAdvancedTexture", 3, 2, 0.7, 3);
+
     // Define movement speed
     const float speed = 5.0f;
 

@@ -9,7 +9,7 @@ using namespace std;
 using namespace sf;
 
 class Enemy {
-private:
+public:
     Sprite EnemyShip;
     Texture EnemyTexture; // Store the texture as a member
     int health;
@@ -17,7 +17,6 @@ private:
     float fireRate;
     int nbBullets;
 
-public:
     // Constructor that directly loads the texture
     Enemy(const string& textureFile, int hp, int pow, float fr, int nb);
 

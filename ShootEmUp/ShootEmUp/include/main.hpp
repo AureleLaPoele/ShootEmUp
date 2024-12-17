@@ -7,6 +7,7 @@
 #include "ProjectileManager.hpp"
 #include "EnemyManager.hpp"
 #include "Player.hpp"
+#include "Enemy.hpp"
 using namespace std;
 using namespace sf;
 

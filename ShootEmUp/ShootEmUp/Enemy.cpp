@@ -11,6 +11,7 @@ Enemy::Enemy(const string& textureFile, int hp, int pow, float fr, int nb)
     EnemyShip.setTexture(EnemyTexture);
 }
 
+
 // Method to get the sprite's position (coordinates)
 Vector2f Enemy::getPosition() const {
     return EnemyShip.getPosition();
