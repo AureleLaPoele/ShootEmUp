@@ -1,5 +1,6 @@
 #include "../include/Player.hpp"
 #include "../include/ResourceManager.hpp"
+#include "../include/ProjectileManager.hpp"
 
 Player::Player() : Ship(100) {}
 
@@ -41,5 +42,18 @@ void Player::shot(ProjectileManager& projectileManager, const std::unordered_map
     if (keyStates.at(sf::Keyboard::Space)) {
         projectileManager.handlePlayerInput(sf::Keyboard::Space, this->playerShip.getPosition());
     }
+}
+
+bool Player::isTouch(ProjectileManager& projectileManager, sf::Sprite player) {
+    for (auto it = projectileManager.playerProjectiles.begin(); it != projectileManager.playerProjectiles.end(); ) {
+        if (player.getGlobalBounds().intersects(it->sprite.getGlobalBounds())) {
+            it = projectileManager.playerProjectiles.erase(it);
+            return true;
+        }
+        else {
+            ++it;
+        }
+    }
+    return false;
 }
 

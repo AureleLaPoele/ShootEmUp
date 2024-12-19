@@ -15,8 +15,8 @@
 //	}
 //}
 
-void Level::changeLevel() {
-	int pos = 0;
+void Level::changeLevel(int num) {
+	this->level = num;
 }
 bool Level::isFinish() {
 

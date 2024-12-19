@@ -1,7 +1,8 @@
 ﻿  main.cpp
-  Génération de code en cours
-  1 of 760 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+C:\Users\aurel\Documents\GitHub\ShootEmUp\ShootEmUp\ShootEmUp\main.cpp(287,27): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating code
+  1 of 753 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
-  Fin de la génération du code
-  ShootEmUp.vcxproj -> C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\x64\Release\ShootEmUp.exe
+  Finished generating code
+  ShootEmUp.vcxproj -> C:\Users\aurel\Documents\GitHub\ShootEmUp\ShootEmUp\x64\Release\ShootEmUp.exe

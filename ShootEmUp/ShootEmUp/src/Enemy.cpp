@@ -4,14 +4,14 @@
 
 Enemy::Enemy() : Ship(100) {}
 
-int Enemy::loadTextureBasic() {
+int Enemy::loadTextureBasic(int x, int y) {
     auto& resourceManager = ResourceManager::getInstance();
     if (!resourceManager.loadTexture("basicShipTexture", "assets/sprites/Enemy_basic_v1.png")) {
         std::cerr << "Failed to load basic enemy ship texture." << std::endl;
         return -1;
     }
     this->enemyShipBasic.setTexture(resourceManager.getTexture("basicShipTexture"));
-    this->enemyShipBasic.setPosition(30, 30);
+    this->enemyShipBasic.setPosition(x, y);
 }
 
 int Enemy::loadTextureAdvanced() {
@@ -34,29 +34,27 @@ int Enemy::loadTextureBoss() {
     this->enemyShipBoss.setPosition(30, 30);
 }
 
-
-void Enemy::level1() {
-    this->loadTextureBasic();
-}
-
-void Enemy::level2() {
-    this->loadTextureAdvanced();
-}
-
-void Enemy::level3() {
-    this->loadTextureAdvanced();
-}
-
 void Enemy::move(const sf::RenderWindow& window, int cycle) {
     float dx = 0.0f, dy = 0.0f;
-    if (cycle != 5) {
+    if (cycle <= 10) {
         dx = 10.0f;
+    }
+    else if (cycle == 11) {
+        dy = 20.0f;
+    }
+    else if (cycle <= 21) {
+        dx = -10.0f;
+    }
+    else if (cycle == 22) {
+        dy = 20.0f;
     }
     enemyShipBasic.move(dx, dy);
 }
 
-void Enemy::shot(ProjectileManager& projectileManager) {
-    projectileManager.spawnEnemyProjectile(this->enemyShipBasic.getPosition());
+void Enemy::shot(ProjectileManager& projectileManager, int random) {
+    if (random == 99) {
+        projectileManager.spawnEnemyProjectile(this->enemyShipBasic.getPosition());
+    }
 }
 
 bool Enemy::isTouch(ProjectileManager& projectileManager, sf::Sprite player) {

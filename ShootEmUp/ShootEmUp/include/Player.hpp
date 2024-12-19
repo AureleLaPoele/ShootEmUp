@@ -12,5 +12,7 @@ public:
 	int loadTexture();
 	void move(const std::unordered_map<sf::Keyboard::Key, bool>& keyStates, float speed, const sf::RenderWindow& window);
 	void shot(ProjectileManager& projectileManager, const std::unordered_map<sf::Keyboard::Key, bool>& keyStates);
+	bool isTouch(ProjectileManager& projectileManager, sf::Sprite player);
+
 };
 #endif

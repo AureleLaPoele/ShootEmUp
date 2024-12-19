@@ -91,7 +91,7 @@ int main() {
         resourceManager.getTexture("enemyLaser"));
 
     // Define movement speed
-    const float speed = 5.0f;
+    const float speed = 2.0f;
 
     // Track key states (initialize all required keys)
     std::unordered_map<sf::Keyboard::Key, bool> keyStates = {
@@ -109,97 +109,86 @@ int main() {
     float frameDuration = 0.1f;
     float scrollSpeed = 250.0f;
     float scrollSpeedforeground = 100.0f;
+    
+    if (RANGEMENT) {
+        sf::Text name;
+        name.setFont(font);
+        name.setString("Intergalactic");
+        name.setCharacterSize(75);
+        //name.setFillColor(sf::Color::Blue);
+        name.setPosition(50, 50);
 
-    sf::Text name;
-    name.setFont(font);
-    name.setString("Intergalactic");
-    name.setCharacterSize(75);
-    //name.setFillColor(sf::Color::Blue);
-    name.setPosition(50, 50);
+        sf::Text name1;
+        name1.setFont(font);
+        name1.setString("Conflict");
+        name1.setCharacterSize(75);
+        //name1.setFillColor(sf::Color::Red);
+        name1.setPosition(150, 150);
 
-    sf::Text name1;
-    name1.setFont(font);
-    name1.setString("Conflict");
-    name1.setCharacterSize(75);
-    //name1.setFillColor(sf::Color::Red);
-    name1.setPosition(150, 150);
+        sf::Text play;
+        play.setFont(font);
+        play.setString("Play");
+        play.setCharacterSize(50);
+        play.setFillColor(sf::Color::Red);
+        play.setPosition(100, 350);
+        sf::FloatRect playTextBounds = play.getGlobalBounds();
+        sf::RectangleShape playHitbox(sf::Vector2f(playTextBounds.width + ESPACEMENT, playTextBounds.height + ESPACEMENT));
+        playHitbox.setPosition(playTextBounds.left - 12.5f, playTextBounds.top - 12.5f);
+        playHitbox.setFillColor(sf::Color::Transparent);
+        playHitbox.setOutlineColor(sf::Color::Red);
+        playHitbox.setOutlineThickness(1);
 
-    sf::Text play;
-    play.setFont(font);
-    play.setString("Play");
-    play.setCharacterSize(50);
-    play.setFillColor(sf::Color::Red);
-    play.setPosition(100, 350);
-    sf::FloatRect playTextBounds = play.getGlobalBounds();
-    sf::RectangleShape playHitbox(sf::Vector2f(playTextBounds.width + ESPACEMENT, playTextBounds.height + ESPACEMENT));
-    playHitbox.setPosition(playTextBounds.left - 12.5f, playTextBounds.top - 12.5f);
-    playHitbox.setFillColor(sf::Color::Transparent);
-    playHitbox.setOutlineColor(sf::Color::Red);
-    playHitbox.setOutlineThickness(1);
+        sf::Text exit;
+        exit.setFont(font);
+        exit.setString("Exit");
+        exit.setCharacterSize(50);
+        exit.setFillColor(sf::Color::Red);
+        exit.setPosition(375, 450);
+        sf::FloatRect exitTextBounds = exit.getGlobalBounds();
+        sf::RectangleShape exitHitbox(sf::Vector2f(exitTextBounds.width + ESPACEMENT, exitTextBounds.height + ESPACEMENT));
+        exitHitbox.setPosition(exitTextBounds.left - 12.5f, exitTextBounds.top - 12.5f);
+        exitHitbox.setFillColor(sf::Color::Transparent);
+        exitHitbox.setOutlineColor(sf::Color::Red);
+        exitHitbox.setOutlineThickness(1);
 
-    sf::Text exit;
-    exit.setFont(font);
-    exit.setString("Exit");
-    exit.setCharacterSize(50);
-    exit.setFillColor(sf::Color::Red);
-    exit.setPosition(250, 550);
-    sf::FloatRect exitTextBounds = exit.getGlobalBounds();
-    sf::RectangleShape exitHitbox(sf::Vector2f(exitTextBounds.width + ESPACEMENT, exitTextBounds.height + ESPACEMENT));
-    exitHitbox.setPosition(exitTextBounds.left - 12.5f, exitTextBounds.top - 12.5f);
-    exitHitbox.setFillColor(sf::Color::Transparent);
-    exitHitbox.setOutlineColor(sf::Color::Red);
-    exitHitbox.setOutlineThickness(1);
+        sf::Text settings;
+        settings.setFont(font);
+        settings.setString("Settings");
+        settings.setCharacterSize(50);
+        settings.setFillColor(sf::Color::Red);
+        settings.setPosition(50, 450);
+        sf::FloatRect settingsTextBounds = settings.getGlobalBounds();
+        sf::RectangleShape settingsHitbox(sf::Vector2f(settingsTextBounds.width + ESPACEMENT, settingsTextBounds.height + ESPACEMENT));
+        settingsHitbox.setPosition(settingsTextBounds.left - 12.5f, settingsTextBounds.top - 12.5f);
+        settingsHitbox.setFillColor(sf::Color::Transparent);
+        settingsHitbox.setOutlineColor(sf::Color::Red);
+        settingsHitbox.setOutlineThickness(1);
 
-    sf::Text settings;
-    settings.setFont(font);
-    settings.setString("Settings");
-    settings.setCharacterSize(50);
-    settings.setFillColor(sf::Color::Red);
-    settings.setPosition(50, 450);
-    sf::FloatRect settingsTextBounds = settings.getGlobalBounds();
-    sf::RectangleShape settingsHitbox(sf::Vector2f(settingsTextBounds.width + ESPACEMENT, settingsTextBounds.height + ESPACEMENT));
-    settingsHitbox.setPosition(settingsTextBounds.left - 12.5f, settingsTextBounds.top - 12.5f);
-    settingsHitbox.setFillColor(sf::Color::Transparent);
-    settingsHitbox.setOutlineColor(sf::Color::Red);
-    settingsHitbox.setOutlineThickness(1);
+        sf::Text editor;
+        editor.setFont(font);
+        editor.setString("Editor");
+        editor.setCharacterSize(50);
+        editor.setFillColor(sf::Color::Red);
+        editor.setPosition(350, 350);
+        sf::FloatRect editorTextBounds = editor.getGlobalBounds();
+        sf::RectangleShape editorHitbox(sf::Vector2f(editorTextBounds.width + ESPACEMENT, editorTextBounds.height + ESPACEMENT));
+        editorHitbox.setPosition(editorTextBounds.left - 12.5f, editorTextBounds.top - 12.5f);
+        editorHitbox.setFillColor(sf::Color::Transparent);
+        editorHitbox.setOutlineColor(sf::Color::Red);
+        editorHitbox.setOutlineThickness(1);
 
-    sf::Text editor;
-    editor.setFont(font);
-    editor.setString("Editor");
-    editor.setCharacterSize(50);
-    editor.setFillColor(sf::Color::Red);
-    editor.setPosition(350, 350);
-    sf::FloatRect editorTextBounds = editor.getGlobalBounds();
-    sf::RectangleShape editorHitbox(sf::Vector2f(editorTextBounds.width + ESPACEMENT, editorTextBounds.height + ESPACEMENT));
-    editorHitbox.setPosition(editorTextBounds.left - 12.5f, editorTextBounds.top - 12.5f);
-    editorHitbox.setFillColor(sf::Color::Transparent);
-    editorHitbox.setOutlineColor(sf::Color::Red);
-    editorHitbox.setOutlineThickness(1);
-
-    sf::Text level;
-    level.setFont(font);
-    level.setString("Level");
-    level.setCharacterSize(50);
-    level.setFillColor(sf::Color::Red);
-    level.setPosition(375, 450);
-    sf::FloatRect levelTextBounds = level.getGlobalBounds();
-    sf::RectangleShape levelHitbox(sf::Vector2f(levelTextBounds.width + ESPACEMENT, levelTextBounds.height + ESPACEMENT));
-    levelHitbox.setPosition(levelTextBounds.left - 12.5f, levelTextBounds.top - 12.5f);
-    levelHitbox.setFillColor(sf::Color::Transparent);
-    levelHitbox.setOutlineColor(sf::Color::Red);
-    levelHitbox.setOutlineThickness(1);
-
-    sf::Text musicText;
-    musicText.setFont(font);
-    musicText.setString("Music");
-    musicText.setCharacterSize(75);
-    musicText.setPosition(250, 450);
-    sf::RectangleShape musicOn(sf::Vector2f(50, 50));
-    musicOn.setPosition(150, 475);
-    sf::RectangleShape musicOff(sf::Vector2f(50, 50));
-    musicOff.setOutlineThickness(5.f);
-    musicOff.setFillColor(sf::Color::Transparent);
-    musicOff.setPosition(150, 475);
+        sf::Text musicText;
+        musicText.setFont(font);
+        musicText.setString("Music");
+        musicText.setCharacterSize(75);
+        musicText.setPosition(250, 450);
+        sf::RectangleShape musicOn(sf::Vector2f(50, 50));
+        musicOn.setPosition(150, 475);
+        sf::RectangleShape musicOff(sf::Vector2f(50, 50));
+        musicOff.setOutlineThickness(5.f);
+        musicOff.setFillColor(sf::Color::Transparent);
+        musicOff.setPosition(150, 475);
+    }
 
     std::cout << "Voici les inputs :\nZ pour aller vers le haut\nS pour aller vers le bas\nQ pour aller vers la gauche\nD pour aller vers la droite\nEspace pour tirer des missiles\nEchap pour quitter la partie\n";
     bool inMenu = true;
@@ -234,14 +223,6 @@ int main() {
                     }
                 }
 
-                else if (sf::Mouse::getPosition(window).x > levelHitbox.getPosition().x && sf::Mouse::getPosition(window).x < levelHitbox.getPosition().x + levelTextBounds.width + ESPACEMENT && sf::Mouse::getPosition(window).y > levelHitbox.getPosition().y && sf::Mouse::getPosition(window).y < levelHitbox.getPosition().y + levelTextBounds.height + ESPACEMENT) {
-                    window.draw(levelHitbox);
-                    onLevel = true;
-                    if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && onLevel) {
-                        std::cout << "Level\n";
-                    }
-                }
-
                 else if (sf::Mouse::getPosition(window).x > editorHitbox.getPosition().x && sf::Mouse::getPosition(window).x < editorHitbox.getPosition().x + editorTextBounds.width + ESPACEMENT && sf::Mouse::getPosition(window).y > editorHitbox.getPosition().y && sf::Mouse::getPosition(window).y < editorHitbox.getPosition().y + editorTextBounds.height + ESPACEMENT) {
                     window.draw(editorHitbox);
                     onEditor = true;
@@ -259,7 +240,6 @@ int main() {
 
                 window.draw(exit);
                 window.draw(play);
-                window.draw(level);
                 window.draw(settings);
                 window.draw(editor);
                 window.draw(name);
@@ -302,11 +282,15 @@ int main() {
                     theme.play();
                 }
                 Level level;
-                level.changeLevel();
+                level.level = 1;
                 int wait = 0;
                 int cycle = 0;
                 bool game = true;
+                srand(time(NULL));
+                int random = rand() % 100;
                 while (game) {
+                    window.clear();
+                    random = rand() % 100;
                     sf::Event event;
                     while (window.pollEvent(event)) {
                         if (event.type == sf::Event::Closed) {
@@ -334,20 +318,115 @@ int main() {
                         background2.setTexture(frames[currentFrame]);
                     }
 
-                    // mouvement et tir
-                    level.player.move(keyStates, speed, window);
-                    level.player.shot(projectileManager, keyStates);
-                    if (level.enemy.isTouch(projectileManager, level.player.playerShip)) {
-                        std::cout << "Touché fdp\n";
-                        game = false;
+                    if (level.level == 1) {
+                        // mouvement et tir
+                        level.player.move(keyStates, speed, window);
+                        level.player.shot(projectileManager, keyStates);
+                        if (!level.isHiddenBasic0) {
+                            level.enemyBasic0.shot(projectileManager, random);
+                        }
+                        if (!level.isHiddenBasic1) {
+                            level.enemyBasic1.shot(projectileManager, random);
+                        }
+                        if (!level.isHiddenBasic2) {
+                            level.enemyBasic2.shot(projectileManager, random);
+                        }
+                        if (!level.isHiddenBasic3) {
+                            level.enemyBasic3.shot(projectileManager, random);
+                        }
+                        if (!level.isHiddenBasic4) {
+                            level.enemyBasic4.shot(projectileManager, random);
+                        }
+                        if (!level.isHiddenBasic5) {
+                            level.enemyBasic5.shot(projectileManager, random);
+                        }
+                        if (level.enemyBasic0.isTouch(projectileManager, level.player.playerShip)) {
+                            std::cout << "Tu as été touché fdp\n";
+                            level.player.hp -= 20;
+                        }
+                        if (level.enemyBasic1.isTouch(projectileManager, level.player.playerShip)) {
+                            std::cout << "Tu as été touché fdp\n";
+                            level.player.hp -= 20;
+                        }
+                        if (level.enemyBasic2.isTouch(projectileManager, level.player.playerShip)) {
+                            std::cout << "Tu as été touché fdp\n";
+                            level.player.hp -= 20;
+                        }
+                        if (level.enemyBasic3.isTouch(projectileManager, level.player.playerShip)) {
+                            std::cout << "Tu as été touché fdp\n";
+                            level.player.hp -= 20;
+                        }
+                        if (level.enemyBasic4.isTouch(projectileManager, level.player.playerShip)) {
+                            std::cout << "Tu as été touché fdp\n";
+                            level.player.hp -= 20;
+                        }
+                        if (level.enemyBasic5.isTouch(projectileManager, level.player.playerShip)) {
+                            std::cout << "Tu as été touché fdp\n";
+                            level.player.hp -= 20;
+                        }
+                        if (level.player.isTouch(projectileManager, level.enemyBasic0.enemyShipBasic)) {
+                            std::cout << "Tu as touché un enemy";
+                            level.enemyBasic0.hp -= 50;
+                            if (level.enemyBasic0.hp == 0) {
+                                std::cout << "Tu as tué un enemi\n";
+                                level.isHiddenBasic0 = true;
+                            }
+                        }
+                        if (level.player.isTouch(projectileManager, level.enemyBasic1.enemyShipBasic)) {
+                            std::cout << "Tu as touché un enemy";
+                            level.enemyBasic1.hp -= 50;
+                            if (level.enemyBasic1.hp == 0) {
+                                std::cout << "Tu as tué un enemi\n";
+                                level.isHiddenBasic1 = true;
+                            }
+                        }
+                        if (level.player.isTouch(projectileManager, level.enemyBasic2.enemyShipBasic)) {
+                            std::cout << "Tu as touché un enemy";
+                            level.enemyBasic2.hp -= 50;
+                            if (level.enemyBasic2.hp == 0) {
+                                std::cout << "Tu as tué un enemi\n";
+                                level.isHiddenBasic2 = true;
+                            }
+                        }
+                        if (level.player.isTouch(projectileManager, level.enemyBasic3.enemyShipBasic)) {
+                            std::cout << "Tu as touché un enemy";
+                            level.enemyBasic3.hp -= 50;
+                            if (level.enemyBasic3.hp == 0) {
+                                std::cout << "Tu as tué un enemi\n";
+                                level.isHiddenBasic3 = true;
+                            }
+                        }
+                        if (level.player.isTouch(projectileManager, level.enemyBasic4.enemyShipBasic)) {
+                            std::cout << "Tu as touché un enemy";
+                            level.enemyBasic4.hp -= 50;
+                            if (level.enemyBasic4.hp == 0) {
+                                std::cout << "Tu as tué un enemi\n";
+                                level.isHiddenBasic4 = true;
+                            }
+                        }
+                        if (level.player.isTouch(projectileManager, level.enemyBasic5.enemyShipBasic)) {
+                            std::cout << "Tu as touché un enemi\n";
+                            level.enemyBasic5.hp -= 50;
+                            if (level.enemyBasic5.hp == 0) {
+                                std::cout << "Tu as tué un enemi\n";
+                                level.isHiddenBasic5 = true;
+                            }
+                        }
+                        if (wait == 50) {
+                            wait = 0;
+                            cycle += 1;
+                            level.enemyBasic0.move(window, cycle);
+                            level.enemyBasic1.move(window, cycle);
+                            level.enemyBasic2.move(window, cycle);
+                            level.enemyBasic3.move(window, cycle);
+                            level.enemyBasic4.move(window, cycle);
+                            level.enemyBasic5.move(window, cycle);
+                            if (cycle == 22) {
+                                cycle = 0;
+                            }
+                        }
+                        wait += 1;
                     }
-                    if (wait == 50) {
-                        wait = 0;
-                        level.enemy.move(window, cycle);
-                        level.enemy.shot(projectileManager);
-                    }
-                    wait += 1;
-                    
 
                     // delta time calulé pour le cooldown
                     float deltaTime = cooldown.restart().asSeconds();
@@ -374,20 +453,31 @@ int main() {
                     }
 
                     // rendu
-                    window.clear();
-                    //for (int i = 0; i < level.arr.size(); i++) {
-                    //    window.draw(level.arr[i].enemyShip);
-                    //}
                     window.draw(background1);
                     window.draw(background2);
                     window.draw(foreground1);
                     window.draw(foreground2);
                     projectileManager.render(window);
                     window.draw(level.player.playerShip);
-                    window.draw(level.enemy.enemyShipBasic);
+                    if (!level.isHiddenBasic0) {
+                        window.draw(level.enemyBasic0.enemyShipBasic);
+                    }
+                    if (!level.isHiddenBasic1) {
+                        window.draw(level.enemyBasic1.enemyShipBasic);
+                    }
+                    if (!level.isHiddenBasic2) {
+                        window.draw(level.enemyBasic2.enemyShipBasic);
+                    }
+                    if (!level.isHiddenBasic3) {
+                        window.draw(level.enemyBasic3.enemyShipBasic);
+                    }
+                    if (!level.isHiddenBasic4) {
+                        window.draw(level.enemyBasic4.enemyShipBasic);
+                    }
+                    if (!level.isHiddenBasic5) {
+                        window.draw(level.enemyBasic5.enemyShipBasic);
+                    }
                     window.display();
-
-
                 }
             }
         }

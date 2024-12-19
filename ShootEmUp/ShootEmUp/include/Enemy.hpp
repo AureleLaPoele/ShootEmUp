@@ -12,14 +12,11 @@ public:
 	sf::Sprite enemyShipBoss;
 	Enemy();
 
-	int loadTextureBasic();
+	int loadTextureBasic(int x, int y);
 	int loadTextureAdvanced();
 	int loadTextureBoss();
-	void level1();
-	void level2();
-	void level3();
 	void move(const sf::RenderWindow& window, int cycle);
-	void shot(ProjectileManager& projectileManager);
+	void shot(ProjectileManager& projectileManager, int random);
 	bool isTouch(ProjectileManager& projectileManager, sf::Sprite player);
 };
 #endif
