@@ -339,6 +339,7 @@ int main() {
                     level.player.shot(projectileManager, keyStates);
                     if (level.enemy.isTouch(projectileManager, level.player.playerShip)) {
                         std::cout << "Touché fdp\n";
+                        game = false;
                     }
                     if (wait == 50) {
                         wait = 0;
