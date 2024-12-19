@@ -4,6 +4,7 @@
 #include "include/Player.hpp"
 #include "include/Enemy.hpp"
 #include "include/Level.hpp"
+#include "include/PowerUp.hpp"
 
 // Function declarations
 //void HandleShootingInput(ProjectileManager& projectileManager, const sf::Sprite& playerShip, const std::unordered_map<sf::Keyboard::Key, bool>& keyStates);
@@ -29,6 +30,21 @@ int main() {
 
     if (!resourceManager.loadTexture("playerLaser", "assets/Player_laser.png") || !resourceManager.loadTexture("enemyLaser", "assets/Enemy_laser.png")) {
         std::cerr << "Failed to load laser textures." << std::endl;
+        return -1;
+    }
+
+    if (!resourceManager.loadTexture("DamageUp", "assets/Damage_Up.png") || !resourceManager.loadTexture("enemyLaser", "assets/Enemy_laser.png")) {
+        std::cerr << "Failed to load dmg up textures." << std::endl;
+        return -1;
+    }
+
+    if (!resourceManager.loadTexture("BulletsUp", "assets/Bullets_Up.png") || !resourceManager.loadTexture("enemyLaser", "assets/Enemy_laser.png")) {
+        std::cerr << "Failed to load bul up textures." << std::endl;
+        return -1;
+    }
+
+    if (!resourceManager.loadTexture("FireRateUp", "assets/FireRate_Up.png") || !resourceManager.loadTexture("enemyLaser", "assets/Enemy_laser.png")) {
+        std::cerr << "Failed to load fr up textures." << std::endl;
         return -1;
     }
 
@@ -365,9 +381,9 @@ int main() {
 
                     // rendu
                     window.clear();
-                    for (int i = 0; i < level.arr.size(); i++) {
-                        window.draw(level.arr[i].enemyShip);
-                    }
+                    //for (int i = 0; i < level.arr.size(); i++) {
+                        //window.draw(level.arr[i].enemyShip);
+                    //}
                     window.draw(background1);
                     window.draw(background2);
                     window.draw(foreground1);

@@ -138,6 +138,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PowerUp.cpp" />
     <ClCompile Include="src\Enemy.cpp" />
     <ClCompile Include="src\Level.cpp" />
     <ClCompile Include="src\Player.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="include\ProjectileManager.hpp" />
     <ClInclude Include="include\ResourceManager.hpp" />
     <ClInclude Include="include\Ship.hpp" />
+    <ClInclude Include="PowerUp.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
