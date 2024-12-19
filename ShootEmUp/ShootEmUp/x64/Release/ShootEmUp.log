@@ -1,0 +1,8 @@
+﻿  main.cpp
+C:\Users\agodin\Downloads\ShootEmUp (2)\ShootEmUp (1)\ShootEmUp\ShootEmUp\ShootEmUp\main.cpp(321,29): warning C4102: 'std' : étiquette non référencée
+  Génération de code en cours
+  1 of 874 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    8 functions had inline decision re-evaluated but remain unchanged
+  Fin de la génération du code
+  ShootEmUp.vcxproj -> C:\Users\agodin\Downloads\ShootEmUp (2)\ShootEmUp (1)\ShootEmUp\ShootEmUp\x64\Release\ShootEmUp.exe
