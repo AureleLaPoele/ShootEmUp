@@ -7,13 +7,15 @@ class Level {
 public:
 	int level;
 	Player player;
+	Enemy enemy;
 	std::vector<Enemy> arr;
 
 	Level() {
 		player.loadTexture();
+		enemy.loadTextureBasic();
 	}
 
-	void changeLevel(int num);
+	void changeLevel();
 	bool isFinish();
 };
 

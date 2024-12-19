@@ -305,7 +305,9 @@ int main() {
                     theme.play();
                 }
                 Level level;
-                level.changeLevel(1);
+                level.changeLevel();
+                int wait = 0;
+                int cycle = 0;
                 bool game = true;
                 while (game) {
                     sf::Event event;
@@ -338,6 +340,12 @@ int main() {
                     // mouvement et tir
                     level.player.move(keyStates, speed, window);
                     level.player.shot(projectileManager, keyStates);
+                    level.enemy.shot(projectileManager);
+                    if (wait == 50) {
+                        wait = 0;
+                        level.enemy.move(window, cycle);
+                    }
+                    wait += 1;
 
                     // delta time calulé pour le cooldown
                     float deltaTime = cooldown.restart().asSeconds();
@@ -374,6 +382,7 @@ int main() {
                     window.draw(foreground2);
                     projectileManager.render(window);
                     window.draw(level.player.playerShip);
+                    window.draw(level.enemy.enemyShipBasic);
                     window.display();
 
 

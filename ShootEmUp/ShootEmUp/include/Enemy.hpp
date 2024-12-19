@@ -11,5 +11,7 @@ public:
 
 	int loadTextureBasic();
 	void level1();
+	void move(const sf::RenderWindow& window, int cycle);
+	void shot(ProjectileManager& projectileManager);
 };
 #endif

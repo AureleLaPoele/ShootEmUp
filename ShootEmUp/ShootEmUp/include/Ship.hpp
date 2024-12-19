@@ -2,6 +2,7 @@
 #define SHIP_HPP
 #include <SFML/Graphics.hpp>
 #include "main.hpp"
+#include "ProjectileManager.hpp"
 
 class Ship {
 public:
