@@ -449,22 +449,22 @@ int main() {
                         level.player.move(keyStates, speed, window);
                         level.player.shot(projectileManager, keyStates);
                         if (!level.isHiddenAdvanced0) {
-                            level.enemyAdvanced0.shot(projectileManager, random);
+                            level.enemyAdvanced0.shotAdvanced(projectileManager, random);
                         }
                         if (!level.isHiddenAdvanced1) {
-                            level.enemyAdvanced1.shot(projectileManager, random);
+                            level.enemyAdvanced1.shotAdvanced(projectileManager, random);
                         }
                         if (!level.isHiddenAdvanced2) {
-                            level.enemyAdvanced2.shot(projectileManager, random);
+                            level.enemyAdvanced2.shotAdvanced(projectileManager, random);
                         }
                         if (!level.isHiddenAdvanced3) {
-                            level.enemyAdvanced3.shot(projectileManager, random);
+                            level.enemyAdvanced3.shotAdvanced(projectileManager, random);
                         }
                         if (!level.isHiddenAdvanced4) {
-                            level.enemyAdvanced4.shot(projectileManager, random);
+                            level.enemyAdvanced4.shotAdvanced(projectileManager, random);
                         }
                         if (!level.isHiddenAdvanced5) {
-                            level.enemyAdvanced5.shot(projectileManager, random);
+                            level.enemyAdvanced5.shotAdvanced(projectileManager, random);
                         }
                         if (level.enemyAdvanced0.isTouch(projectileManager, level.player.playerShip)) {
                             std::cout << "Tu as été touché\n";
@@ -603,27 +603,50 @@ int main() {
                     window.draw(foreground2);
                     projectileManager.render(window);
                     window.draw(level.player.playerShip);
-                    if (!level.isHiddenBasic0) {
-                        window.draw(level.enemyBasic0.enemyShipBasic);
+                    if (level.level == 1) {
+                        if (!level.isHiddenBasic0) {
+                            window.draw(level.enemyBasic0.enemyShipBasic);
+                        }
+                        if (!level.isHiddenBasic1) {
+                            window.draw(level.enemyBasic1.enemyShipBasic);
+                        }
+                        if (!level.isHiddenBasic2) {
+                            window.draw(level.enemyBasic2.enemyShipBasic);
+                        }
+                        if (!level.isHiddenBasic3) {
+                            window.draw(level.enemyBasic3.enemyShipBasic);
+                        }
+                        if (!level.isHiddenBasic4) {
+                            window.draw(level.enemyBasic4.enemyShipBasic);
+                        }
+                        if (!level.isHiddenBasic5) {
+                            window.draw(level.enemyBasic5.enemyShipBasic);
+                        }
                     }
-                    if (!level.isHiddenBasic1) {
-                        window.draw(level.enemyBasic1.enemyShipBasic);
-                    }
-                    if (!level.isHiddenBasic2) {
-                        window.draw(level.enemyBasic2.enemyShipBasic);
-                    }
-                    if (!level.isHiddenBasic3) {
-                        window.draw(level.enemyBasic3.enemyShipBasic);
-                    }
-                    if (!level.isHiddenBasic4) {
-                        window.draw(level.enemyBasic4.enemyShipBasic);
-                    }
-                    if (!level.isHiddenBasic5) {
-                        window.draw(level.enemyBasic5.enemyShipBasic);
+                    if (level.level == 2) {
+                        if (!level.isHiddenAdvanced0) {
+                            window.draw(level.enemyAdvanced0.enemyShipAdvanced);
+                        }
+                        if (!level.isHiddenAdvanced1) {
+                            window.draw(level.enemyAdvanced1.enemyShipAdvanced);
+                        }
+                        if (!level.isHiddenAdvanced2) {
+                            window.draw(level.enemyAdvanced2.enemyShipAdvanced);
+                        }
+                        if (!level.isHiddenAdvanced3) {
+                            window.draw(level.enemyAdvanced3.enemyShipAdvanced);
+                        }
+                        if (!level.isHiddenAdvanced4) {
+                            window.draw(level.enemyAdvanced4.enemyShipAdvanced);
+                        }
+                        if (!level.isHiddenAdvanced5) {
+                            window.draw(level.enemyAdvanced5.enemyShipAdvanced);
+                        }
                     }
                     window.display();
                     if (level.isHiddenBasic0 && level.isHiddenBasic1 && level.isHiddenBasic2 && level.isHiddenBasic3 && level.isHiddenBasic4 && level.isHiddenBasic5) {
                         level.level = 2;
+                        cycle = 0;
                     }
                 }
             }

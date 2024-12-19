@@ -49,11 +49,18 @@ void Enemy::move(const sf::RenderWindow& window, int cycle) {
         dy = 20.0f;
     }
     enemyShipBasic.move(dx, dy);
+    enemyShipAdvanced.move(dx, dy);
 }
 
 void Enemy::shot(ProjectileManager& projectileManager, int random) {
     if (random == 99) {
         projectileManager.spawnEnemyProjectile(this->enemyShipBasic.getPosition());
+    }
+}
+
+void Enemy::shotAdvanced(ProjectileManager& projectileManager, int random) {
+    if (random == 99) {
+        projectileManager.spawnEnemyProjectile(this->enemyShipAdvanced.getPosition());
     }
 }
 
