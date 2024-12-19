@@ -11,6 +11,18 @@
       "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\src\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\Ship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\src\\Ship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\main.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\include\\main.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\Player.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\include\\Player.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\Enemy.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\include\\Enemy.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -19,20 +31,12 @@
       "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\include\\Level.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\Player.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\include\\Player.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\src\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\Ship.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\include\\Ship.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\Ship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\src\\Ship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\src\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\Level.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -45,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\src\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\main.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\include\\main.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\ResourceManager.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -106,7 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Level.cpp",
               "DocumentMoniker": "C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\Level.cpp",
               "RelativeDocumentMoniker": "ShootEmUp\\src\\Level.cpp",
@@ -119,13 +119,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Level.hpp",
               "DocumentMoniker": "C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\Level.hpp",
               "RelativeDocumentMoniker": "ShootEmUp\\include\\Level.hpp",
               "ToolTip": "C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\Level.hpp",
               "RelativeToolTip": "ShootEmUp\\include\\Level.hpp",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAcwCQAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAowCAAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-19T21:35:19.965Z",
               "EditorCaption": ""
@@ -138,20 +138,20 @@
               "RelativeDocumentMoniker": "ShootEmUp\\src\\Enemy.cpp",
               "ToolTip": "C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\Enemy.cpp",
               "RelativeToolTip": "ShootEmUp\\src\\Enemy.cpp",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADYAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-19T11:18:12.338Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Enemy.hpp",
               "DocumentMoniker": "C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\Enemy.hpp",
               "RelativeDocumentMoniker": "ShootEmUp\\include\\Enemy.hpp",
               "ToolTip": "C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\Enemy.hpp",
               "RelativeToolTip": "ShootEmUp\\include\\Enemy.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-18T22:24:45.609Z",
               "EditorCaption": ""
@@ -184,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Ship.hpp",
               "DocumentMoniker": "C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\Ship.hpp",
               "RelativeDocumentMoniker": "ShootEmUp\\include\\Ship.hpp",
@@ -197,7 +197,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "Ship.cpp",
               "DocumentMoniker": "C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\Ship.cpp",
               "RelativeDocumentMoniker": "ShootEmUp\\src\\Ship.cpp",
@@ -216,27 +216,27 @@
               "RelativeDocumentMoniker": "ShootEmUp\\main.cpp",
               "ToolTip": "C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\main.cpp*",
               "RelativeToolTip": "ShootEmUp\\main.cpp*",
-              "ViewState": "AgIAAIUAAAAAAAAAAAD4v5AAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAACkCAAAAAAAAAAAUwD0CAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-17T15:58:09.779Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "main.hpp",
               "DocumentMoniker": "C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\main.hpp",
               "RelativeDocumentMoniker": "ShootEmUp\\include\\main.hpp",
               "ToolTip": "C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\main.hpp",
               "RelativeToolTip": "ShootEmUp\\include\\main.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-17T16:03:04.518Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "ResourceManager.cpp",
               "DocumentMoniker": "C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\ResourceManager.cpp",
               "RelativeDocumentMoniker": "ShootEmUp\\src\\ResourceManager.cpp",
@@ -275,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ProjectileManager.hpp",
               "DocumentMoniker": "C:\\Users\\aurel\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\ProjectileManager.hpp",
               "RelativeDocumentMoniker": "ShootEmUp\\include\\ProjectileManager.hpp",

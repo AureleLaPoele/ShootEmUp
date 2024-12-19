@@ -14,24 +14,24 @@ int Enemy::loadTextureBasic(int x, int y) {
     this->enemyShipBasic.setPosition(x, y);
 }
 
-int Enemy::loadTextureAdvanced() {
+int Enemy::loadTextureAdvanced(int x, int y) {
     auto& resourceManager = ResourceManager::getInstance();
     if (!resourceManager.loadTexture("advancedShipTexture", "assets/sprites/Enemy_advanced_v1.png")) {
         std::cerr << "Failed to load advanced enemy ship texture." << std::endl;
         return -1;
     }
     this->enemyShipAdvanced.setTexture(resourceManager.getTexture("advancedShipTexture"));
-    this->enemyShipAdvanced.setPosition(30, 30);
+    this->enemyShipAdvanced.setPosition(x, y);
 }
 
-int Enemy::loadTextureBoss() {
+int Enemy::loadTextureBoss(int x, int y) {
     auto& resourceManager = ResourceManager::getInstance();
     if (!resourceManager.loadTexture("bossShipTexture", "assets/sprites/Enemy_boss_v1.png")) {
         std::cerr << "Failed to load boss enemy ship texture." << std::endl;
         return -1;
     }
     this->enemyShipBoss.setTexture(resourceManager.getTexture("bossShipTexture"));
-    this->enemyShipBoss.setPosition(30, 30);
+    this->enemyShipBoss.setPosition(x, y);
 }
 
 void Enemy::move(const sf::RenderWindow& window, int cycle) {

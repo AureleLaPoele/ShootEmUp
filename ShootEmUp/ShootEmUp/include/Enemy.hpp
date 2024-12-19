@@ -13,8 +13,8 @@ public:
 	Enemy();
 
 	int loadTextureBasic(int x, int y);
-	int loadTextureAdvanced();
-	int loadTextureBoss();
+	int loadTextureAdvanced(int x, int y);
+	int loadTextureBoss(int x, int y);
 	void move(const sf::RenderWindow& window, int cycle);
 	void shot(ProjectileManager& projectileManager, int random);
 	bool isTouch(ProjectileManager& projectileManager, sf::Sprite player);

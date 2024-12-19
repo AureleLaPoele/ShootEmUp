@@ -19,7 +19,19 @@ public:
 	bool isHiddenBasic4;
 	Enemy enemyBasic5;
 	bool isHiddenBasic5;
-	std::vector<Enemy> arr;
+
+	Enemy enemyAdvanced0;
+	bool isHiddenAdvanced0;
+	Enemy enemyAdvanced1;
+	bool isHiddenAdvanced1;
+	Enemy enemyAdvanced2;
+	bool isHiddenAdvanced2;
+	Enemy enemyAdvanced3;
+	bool isHiddenAdvanced3;
+	Enemy enemyAdvanced4;
+	bool isHiddenAdvanced4;
+	Enemy enemyAdvanced5;
+	bool isHiddenAdvanced5;
 
 	Level() {
 		player.loadTexture();
@@ -35,6 +47,19 @@ public:
 		isHiddenBasic3 = false;
 		isHiddenBasic4 = false;
 		isHiddenBasic5 = false;
+
+		enemyAdvanced0.loadTextureAdvanced(75, 30);
+		enemyAdvanced1.loadTextureAdvanced(150, 30);
+		enemyAdvanced2.loadTextureAdvanced(225, 30);
+		enemyAdvanced3.loadTextureAdvanced(300, 30);
+		enemyAdvanced4.loadTextureAdvanced(375, 30);
+		enemyAdvanced5.loadTextureAdvanced(450, 30);
+		isHiddenAdvanced0 = false;
+		isHiddenAdvanced1 = false;
+		isHiddenAdvanced2 = false;
+		isHiddenAdvanced3 = false;
+		isHiddenAdvanced4 = false;
+		isHiddenAdvanced5 = false;
 	}
 
 	void changeLevel(int num);
