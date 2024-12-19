@@ -365,9 +365,9 @@ int main() {
 
                     // rendu
                     window.clear();
-                    for (int i = 0; i < level.arr.size(); i++) {
-                        window.draw(level.arr[i].enemyShip);
-                    }
+                    //for (int i = 0; i < level.arr.size(); i++) {
+                    //    window.draw(level.arr[i].enemyShip);
+                    //}
                     window.draw(background1);
                     window.draw(background2);
                     window.draw(foreground1);
