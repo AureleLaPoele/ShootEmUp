@@ -13,6 +13,7 @@ public:
 	Level() {
 		player.loadTexture();
 		enemy.loadTextureBasic();
+
 	}
 
 	void changeLevel();

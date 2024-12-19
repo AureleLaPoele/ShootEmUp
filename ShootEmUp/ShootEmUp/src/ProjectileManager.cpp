@@ -44,7 +44,8 @@ void ProjectileManager::handlePlayerInput(const sf::Keyboard::Key& key, const sf
     }
 }
 
-void ProjectileManager::spawnEnemyProjectile(const sf::Vector2f& position, const sf::Vector2f& velocity) {
+void ProjectileManager::spawnEnemyProjectile(const sf::Vector2f& position) {
+    sf::Vector2f velocity(0, 350);
     enemyProjectiles.emplace_back(position, velocity, enemyProjectileTexture);
 }
 

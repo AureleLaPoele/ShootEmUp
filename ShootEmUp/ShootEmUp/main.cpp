@@ -5,9 +5,6 @@
 #include "include/Enemy.hpp"
 #include "include/Level.hpp"
 
-// Function declarations
-//void HandleShootingInput(ProjectileManager& projectileManager, const sf::Sprite& playerShip, const std::unordered_map<sf::Keyboard::Key, bool>& keyStates);
-
 int main() {
     // Window creation
     sf::RenderWindow window(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT, 32), "Shoot Them Up");
@@ -340,12 +337,16 @@ int main() {
                     // mouvement et tir
                     level.player.move(keyStates, speed, window);
                     level.player.shot(projectileManager, keyStates);
-                    level.enemy.shot(projectileManager);
+                    if (level.enemy.isTouch(projectileManager, level.player.playerShip)) {
+                        std::cout << "Touché fdp\n";
+                    }
                     if (wait == 50) {
                         wait = 0;
                         level.enemy.move(window, cycle);
+                        level.enemy.shot(projectileManager);
                     }
                     wait += 1;
+                    
 
                     // delta time calulé pour le cooldown
                     float deltaTime = cooldown.restart().asSeconds();

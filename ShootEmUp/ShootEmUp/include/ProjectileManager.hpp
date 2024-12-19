@@ -12,9 +12,8 @@ public:
     void render(sf::RenderWindow& window);
     void handlePlayerInput(const sf::Keyboard::Key& key, const sf::Vector2f& playerPosition);
 
-    void spawnEnemyProjectile(const sf::Vector2f& position, const sf::Vector2f& velocity);
+    void spawnEnemyProjectile(const sf::Vector2f& position);
 
-private:
     struct Projectile {
         sf::Sprite sprite;
         sf::Vector2f velocity;
