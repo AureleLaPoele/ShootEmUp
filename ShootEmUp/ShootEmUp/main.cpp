@@ -90,8 +90,8 @@ int main() {
         resourceManager.getTexture("playerLaser"),
         resourceManager.getTexture("enemyLaser"));
 
-    // Define movement speed
-    const float speed = 2.0f;
+
+    const float speed = 5.0f;
 
     // Track key states (initialize all required keys)
     std::unordered_map<sf::Keyboard::Key, bool> keyStates = {
@@ -279,6 +279,7 @@ int main() {
                 if (music) {
                     theme.play();
                 }
+                int heal = 100;
                 Level level;
                 level.level = 1;
                 int wait = 0;
@@ -341,43 +342,67 @@ int main() {
                         if (level.enemyBasic0.isTouch(projectileManager, level.player.playerShip)) {
                             std::cout << "Tu as été touché\n";
                             level.player.hp -= 50;
-                            if (level.player.hp == 0) {
+                            heal -= 10;
+                            std::cout << "Tu as " << heal << " de points de vie\n";
+                            if (heal == 0) {
                                 std::cout << "Game Over !";
+                                game = false;
+                                inMenu = true;
                             }
                         }
                         if (level.enemyBasic1.isTouch(projectileManager, level.player.playerShip)) {
                             std::cout << "Tu as été touché\n";
                             level.player.hp -= 50;
-                            if (level.player.hp == 0) {
+                            heal -= 10;
+                            std::cout << "Tu as " << heal << " de points de vie\n";
+                            if (heal == 0) {
                                 std::cout << "Game Over !";
+                                game = false;
+                                inMenu = true;
                             }
                         }
                         if (level.enemyBasic2.isTouch(projectileManager, level.player.playerShip)) {
                             std::cout << "Tu as été touché\n";
                             level.player.hp -= 50;
-                            if (level.player.hp == 0) {
+                            heal -= 10;
+                            std::cout << "Tu as " << heal << " de points de vie\n";
+                            if (heal == 0) {
                                 std::cout << "Game Over !";
+                                game = false;
+                                inMenu = true;
                             }
                         }
                         if (level.enemyBasic3.isTouch(projectileManager, level.player.playerShip)) {
                             std::cout << "Tu as été touché\n";
                             level.player.hp -= 50;
-                            if (level.player.hp == 0) {
+                            heal -= 10;
+                            std::cout << "Tu as " << heal << " de points de vie\n";
+                            if (heal == 0) {
                                 std::cout << "Game Over !";
+                                game = false;
+                                inMenu = true;
                             }
                         }
                         if (level.enemyBasic4.isTouch(projectileManager, level.player.playerShip)) {
                             std::cout << "Tu as été touché\n";
                             level.player.hp -= 50;
-                            if (level.player.hp == 0) {
+                            heal -= 10;
+                            std::cout << "Tu as " << heal << " de points de vie\n";
+                            if (heal == 0) {
                                 std::cout << "Game Over !";
+                                game = false;
+                                inMenu = true;
                             }
                         }
                         if (level.enemyBasic5.isTouch(projectileManager, level.player.playerShip)) {
                             std::cout << "Tu as été touché\n";
                             level.player.hp -= 50;
-                            if (level.player.hp == 0) {
+                            heal -= 10;
+                            std::cout << "Tu as " << heal << " de points de vie\n";
+                            if (heal == 0) {
                                 std::cout << "Game Over !";
+                                game = false;
+                                inMenu = true;
                             }
                         }
                         if (level.player.isTouch(projectileManager, level.enemyBasic0.enemyShipBasic)) {
