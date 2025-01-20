@@ -1,8 +1,23 @@
 ﻿  main.cpp
 C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\ShootEmUp\main.cpp(288,27): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  Enemy.cpp
+C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\ShootEmUp\src\Enemy.cpp(14,41): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\ShootEmUp\src\Enemy.cpp(14,38): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\ShootEmUp\src\Enemy.cpp(24,44): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\ShootEmUp\src\Enemy.cpp(24,41): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\ShootEmUp\src\Enemy.cpp(34,40): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\ShootEmUp\src\Enemy.cpp(34,37): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  Level.cpp
+  Player.cpp
+  ProjectileManager.cpp
+  ResourceManager.cpp
+  Ship.cpp
   Génération de code en cours
-  1 of 743 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\ShootEmUp\src\Enemy.cpp(15): warning C4715: 'Enemy::loadTextureBasic' : les chemins de contrôle ne retournent pas tous une valeur
+C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\ShootEmUp\src\Player.cpp(15): warning C4715: 'Player::loadTexture' : les chemins de contrôle ne retournent pas tous une valeur
+C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\ShootEmUp\src\Enemy.cpp(25): warning C4715: 'Enemy::loadTextureAdvanced' : les chemins de contrôle ne retournent pas tous une valeur
+  19 of 743 functions ( 2.6%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    3 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   ShootEmUp.vcxproj -> C:\Users\agodin\Documents\GitHub\ShootEmUp\ShootEmUp\x64\Release\ShootEmUp.exe

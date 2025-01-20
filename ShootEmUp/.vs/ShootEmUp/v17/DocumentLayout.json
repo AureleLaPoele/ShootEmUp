@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\main.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\include\\main.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\Ship.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\include\\Ship.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -37,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\Ship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\src\\Ship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\main.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|solutionrelative:ShootEmUp\\include\\main.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{68ECD4C2-6FA4-451A-A473-9A7EC90AD1A5}|ShootEmUp\\ShootEmUp.vcxproj|C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\ProjectileManager.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -112,14 +112,27 @@
               "RelativeDocumentMoniker": "ShootEmUp\\main.cpp",
               "ToolTip": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\main.cpp",
               "RelativeToolTip": "ShootEmUp\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJQBAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAO4AAAAAAAAAAADwvwEBAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-17T15:58:09.779Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "main.hpp",
+              "DocumentMoniker": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\main.hpp",
+              "RelativeDocumentMoniker": "ShootEmUp\\include\\main.hpp",
+              "ToolTip": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\main.hpp",
+              "RelativeToolTip": "ShootEmUp\\include\\main.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-17T16:03:04.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Level.cpp",
               "DocumentMoniker": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\Level.cpp",
               "RelativeDocumentMoniker": "ShootEmUp\\src\\Level.cpp",
@@ -127,12 +140,11 @@
               "RelativeToolTip": "ShootEmUp\\src\\Level.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-19T10:29:51.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T10:29:51.587Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Level.hpp",
               "DocumentMoniker": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\Level.hpp",
               "RelativeDocumentMoniker": "ShootEmUp\\include\\Level.hpp",
@@ -140,12 +152,11 @@
               "RelativeToolTip": "ShootEmUp\\include\\Level.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-19T21:35:19.965Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T21:35:19.965Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Enemy.cpp",
               "DocumentMoniker": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\Enemy.cpp",
               "RelativeDocumentMoniker": "ShootEmUp\\src\\Enemy.cpp",
@@ -157,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Enemy.hpp",
               "DocumentMoniker": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\Enemy.hpp",
               "RelativeDocumentMoniker": "ShootEmUp\\include\\Enemy.hpp",
@@ -169,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\Player.cpp",
               "RelativeDocumentMoniker": "ShootEmUp\\src\\Player.cpp",
@@ -177,12 +188,11 @@
               "RelativeToolTip": "ShootEmUp\\src\\Player.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-17T16:13:48.959Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T16:13:48.959Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Player.hpp",
               "DocumentMoniker": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\Player.hpp",
               "RelativeDocumentMoniker": "ShootEmUp\\include\\Player.hpp",
@@ -190,12 +200,11 @@
               "RelativeToolTip": "ShootEmUp\\include\\Player.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-17T16:14:38.81Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T16:14:38.81Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Ship.hpp",
               "DocumentMoniker": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\Ship.hpp",
               "RelativeDocumentMoniker": "ShootEmUp\\include\\Ship.hpp",
@@ -203,12 +212,11 @@
               "RelativeToolTip": "ShootEmUp\\include\\Ship.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-18T22:03:20.77Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T22:03:20.77Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Ship.cpp",
               "DocumentMoniker": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\src\\Ship.cpp",
               "RelativeDocumentMoniker": "ShootEmUp\\src\\Ship.cpp",
@@ -217,18 +225,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-18T22:02:57.746Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "main.hpp",
-              "DocumentMoniker": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\main.hpp",
-              "RelativeDocumentMoniker": "ShootEmUp\\include\\main.hpp",
-              "ToolTip": "C:\\Users\\agodin\\Documents\\GitHub\\ShootEmUp\\ShootEmUp\\ShootEmUp\\include\\main.hpp",
-              "RelativeToolTip": "ShootEmUp\\include\\main.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-17T16:03:04.518Z"
             },
             {
               "$type": "Document",
